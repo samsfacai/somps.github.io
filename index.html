@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOMPS</title>
+    <link rel="icon" href="somps.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .nav-toggle {
+            display: none;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+            }
+            .nav-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="nav-toggle" onclick="toggleNav()">☰</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="https://t.me/kspr_home_bot">SOMPS kspr BOT</a></li>
+                <li><a href="#tokenomics">Tokenomics</a></li>
+                <li><a href="#dog11">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Header Section -->
+    <div class="header-title">
+        <img src="somps.png" alt="MORI Logo" class="logo">
+        <div class="title-text">
+            <h1>SOMPS KRC20 #1</h1>
+            <h2>1KAS=100,000,000 SOMPS | 1SOMPS=1USDT</h2>
+            <!-- 新增的行 -->
+        </div>
+        <select id="language-selector" onchange="changeLanguage()" style="margin-right: 20px;">
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="es">Español</option>
+            <option value="ko">한국어</option>
+            <option value="hi">हिन्दी</option>
+            <option value="ar">العربية</option>
+            <option value="zh" selected>简体中文</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+        </select>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="petitionModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>To the Binance Team and @heyibinance:</h2>
+            <p>We are members of the SOMPS community, submitting our listing application to Binance with great enthusiasm and hoping for your support! SOMPS fully aligns with the "free listing" criteria proposed by @heyibinance, as we are a small-cap project
+                with a strong and unique community culture. Here are the reasons for our petition:</p>
+            <ol>
+                <li><strong>Deep Community Culture:</strong> SOMPS was created to increase awareness and appreciation for the smallest unit of Kaspa, known as sompi, through a fun and light-hearted approach...</li>
+                <li><strong>Small Cap, Big Potential:</strong> While SOMPS currently has a small market cap, its growth potential is immense.</li>
+                <li><strong>Aligned with Binance Listing Standards:</strong> Our project excels in transparency, compliance, and market demand...</li>
+                <li><strong>Creating a Win-Win Partnership:</strong> We look forward to collaborating with Binance!</li>
+            </ol>
+            <p>We sincerely ask @heyibinance to hear the voice of our community and support SOMPS' listing on Binance. Thank you for your attention and support!</p>
+            <p>— SOMPS Community</p>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>$SOMPS</h1>
+            <h2>SOMPS•SOMPI</h2>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">28,700,000,000,000</span>
+                    <span class="stat-label">Total Supply</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">#1</span>
+                    <span class="stat-label">KRC20</span>
+                </div>
+            </div>
+            <div class="cta-buttons">
+                <a href="https://t.me/kspr_home_bot" class="cta-button primary">Buy Now</a>
+                <a href="https://t.me/sompskas" class="cta-button secondary">Join Community</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="somps.png" alt="MORI Hero Image">
+        </div>
+    </section>
+
+    <!-- Exchange Platforms Section -->
+    <section class="exchange-section">
+        <h2>Exchanges</h2>
+        <div class="exchange-logos">
+            <div class="exchange-logo-item">
+                <a href="https://swap.guac.fyi/" target="_blank">
+                    <img src="guacswap.png" alt="Magic Eden">
+                    <h3>GuacSwap KAS</h3>
+                    <p>GuacSwap is a fast and user-friendly P2P trading platform for KRC20 tokens.</p>
+                </a>
+            </div>
+            <div class="exchange-logo-item">
+                <a href="https://kspr-bot.xyz/" target="_blank">
+                    <img src="KSPRBOT.png" alt="Unisat">
+                    <h3>KSPR BTO P2P DEX</h3>
+                    <p>Unleashing the KRC20 potential on Kaspa!</p>
+                </a>
+            </div>
+            <div class="exchange-logo-item">
+                <a href="https://www.kaspiano.com/token/SOMPS" target="_blank">
+                    <img src="KSAPIANO.png" alt="OKX">
+                    <h3>ksapinano DEX</h3>
+                    <p>Ksapinano DEX</p>
+                </a>
+            </div>
+        </div>
+        <br>
+        <div class="exchange-logos">
+            <div class="exchange-logo-item">
+                <a href="https://www.lbank.com/zh-TW/trade/somps_usdt" target="_blank">
+                    <img src="LBANK.png" alt="Magic Eden">
+                    <h3>Lbank</h3>
+                    <p>At LBank you can buy or sell digital assets using nearly 200 fiat currencies via bank transfer or credit/debit card</p>
+                </a>
+            </div>
+            <div class="exchange-logo-item">
+                <a href="https://www.biconomy.com/en" target="_blank">
+                    <img src="Biconomy.png" alt="Unisat">
+                    <h3>Biconomy</h3>
+                    <p>Join the Biconomy Community Today</p>
+                </a>
+            </div>
+            <div class="exchange-logo-item">
+                <a href="https://www.xt.com/en" target="_blank">
+                    <img src="xt.png" alt="OKX">
+                    <h3>XT CEX</h3>
+                    <p>Buy, sell, trade, and hold cryptocurrencies on XT.com</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="token-info-section" style="text-align: center; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        <a href="https://www.coingecko.com/en/coins/somps" target="_blank" style="margin: 10px; display: inline-block; text-decoration: none; transition: transform 0.3s;">
+            <img src="coingecko1.png" alt="Memento Mori Icon" style="width: 60px; height: 60px; border-radius: 50%;">
+            <h2 style="margin: 5px 0;">coinGecko</h2>
+        </a>
+        <br>
+        <a href="https://kas.fyi/token/krc20/SOMPS" target="_blank" style="margin: 10px; display: inline-block; text-decoration: none; transition: transform 0.3s;">
+            <img src="kasfyi.png" alt="Ord.io Icon" style="width: 60px; height: 60px; border-radius: 50%;">
+            <h2 style="margin: 5px 0;">Ord CHAT</h2>
+        </a>
+        <br>
+        <a href="https://katscan.nachowyborski.xyz/tokens/SOMPS" target="_blank" style="margin: 10px; display: inline-block; text-decoration: none; transition: transform 0.3s;">
+            <img src="katscan.png" alt="Ord.io Icon" style="width: 60px; height: 60px; border-radius: 50%;">
+            <h2 style="margin: 5px 0;">Ordiscan</h2>
+        </a>
+    </section>
+
+    <section class="media-section">
+        <div class="video-container">
+            <iframe width="760" height="515" src="https://www.youtube.com/embed/clAQkl4HUf8?si=uGHS-8w8hj8Yt7FE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="social-links">
+            <a href="https://www.youtube.com/@CryptoStrategiesWithChris" target="_blank">
+                <img src="channels4_profile.jpg" alt="Twitter" class="social-logo">
+            </a>
+            <a href="https://x.com/Cryptopumpzzzz" target="_blank">
+                <img src="cpyptopumpzzzz.png" alt="Twitter" class="social-logo">
+            </a>
+            <a href="https://www.youtube.com/@CryptoPumpz" target="_blank" class="youtube-link">Visit our YouTube channel</a>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder-section" id="dog11">
+        <div class="founder-grid">
+            <div class="founder-image">
+                <a href="https://x.com/hashdag" target="_blank">
+                    <img src="sompssompi.jpeg" alt="Founder">
+                </a>
+            </div>
+            <div class="founder-info">
+                <h3 id="founder-title">KASPA Sompi founder, pay tribute to him!</h3>
+                <p id="founder-description">The founder, Yonatan Sompolinsky, is a postdoctoral research fellow in Computer Science at Harvard University.</p>
+                <div class="founder-stats">
+                    <div class="stat">
+                        <span class="number">100%</span>
+                        <span class="label">Fair Distribution</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">100%</span>
+                        <span class="label">Fair MINT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Community Links</h3>
+                <div class="social-links-row">
+                    <a href="https://t.me/sompskas" class="social-link">
+                        <img src="telegram.png" alt="Telegram">
+                        <span>Telegram morirune</span>
+                    </a>
+                    <a href="https://x.com/SompsOnKas" class="social-link">
+                        <img src="somps.png" alt="Twitter Channel">
+                        <span>Twitter - X</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p class="about-text">SOMPS•SOMPI is a community-driven project celebrating life, cherishing every moment.</p>
+                <p class="copyright">&copy; 2024 SOMPS•SOMPI</p>
+                <p class="version">Version: 1.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleNav() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        const translations = {
+            en: {
+                title: "SOMPS KRC20 #1",
+                subtitle: "1KAS=100,000,000 SOMPS | 1SOMPS=1USDT",
+                exchanges: "Exchanges",
+                totalSupply: "Total Supply",
+                airdrop: "Airdrop",
+                circulatingSupply: "Circulating Supply",
+                tokenomics: "Tokenomics",
+                fairDistribution: "100% fair and free distribution, no pre-mining, no team allocation",
+                decentralizedToken: "A truly decentralized community token",
+                founderTitle: "Founder of KASPA Sompi",
+                founderDescription: "The founder, Yonatan Sompolinsky, is a postdoctoral research fellow in Computer Science at Harvard University.",
+                communityLinks: "Community Links",
+                aboutUs: "About Us",
+                copyright: "&copy; 2024 SOMPS•SOMPI",
+                version: "Version: 1.0",
+                ctaButtons: {
+                    buyNow: "Buy Now",
+                    joinCommunity: "Join Community"
+                }
+            },
+            ja: {
+                title: "SOMPS KRC20 #1",
+                subtitle: "1KAS=100,000,000 SOMPS | 1SOMPS=1USDT",
+                exchanges: "取引所",
+                totalSupply: "総供給量",
+                airdrop: "エアドロップ",
+                circulatingSupply: "循環供給量",
+                tokenomics: "トークノミクス",
+                fairDistribution: "100% 公平かつ無料の配布、事前マイニングなし、チーム配分なし",
+                decentralizedToken: "真に分散化されたコミュニティトークン",
+                founderTitle: "KASPA Sompiの創設者",
+                founderDescription: "創設者のYonatan Sompolinskyは、ハーバード大学のコンピュータサイエンスの博士研究員です。",
+                communityLinks: "コミュニティリンク",
+                aboutUs: "私たちについて",
+                copyright: "&copy; 2024 SOMPS•SOMPI",
+                version: "バージョン: 1.0",
+                ctaButtons: {
+                    buyNow: "今すぐ購入",
+                    joinCommunity: "コミュニティに参加"
+                }
+            },
+            es: {
+                title: "SOMPS KRC20 #1",
+                subtitle: "1KAS=100,000,000 SOMPS | 1SOMPS=1USDT",
+                exchanges: "Intercambios",
+                totalSupply: "Suministro Total",
+                airdrop: "Airdrop",
+                circulatingSupply: "Suministro Circulante",
+                tokenomics: "Tokenomics",
+                fairDistribution: "100% distribución justa y gratuita, sin pre-minado, sin asignación de equipo",
+                decentralizedToken: "Un token comunitario verdaderamente descentralizado",
+                founderTitle: "Fundador de KASPA Sompi",
+                founderDescription: "El fundador, Yonatan Sompolinsky, es investigador postdoctoral en Ciencias de la Computación en la Universidad de Harvard.",
+                communityLinks: "Enlaces de la Comunidad",
+                aboutUs: "Sobre Nosotros",
+                copyright: "&copy; 2024 SOMPS•SOMPI",
+                version: "Versión: 1.0",
+                ctaButtons: {
+                    buyNow: "Comprar Ahora",
+                    joinCommunity: "Unirse a la Comunidad"
+                }
+            },
+            ko: {
+                title: "SOMPS KRC20 #1",
+                subtitle: "1KAS=100,000,000 SOMPS | 1SOMPS=1USDT",
+                exchanges: "거래소",
+                totalSupply: "총 공급량",
+                airdrop: "에어드랍",
+                circulatingSupply: "유통 공급량",
+                tokenomics: "토큰 경제",
+                fairDistribution: "100% 공정하고 무료 배포, 사전 채굴 없음, 팀 할당 ���음",
+                decentralizedToken: "진정한 분산 커뮤니티 토큰",
+                founderTitle: "KASPA Sompi의 창립자",
+                founderDescription: "창립자 Yonatan Sompolinsky는 하버드 대학교 컴퓨터 과학의 박사 후 연구원입니다.",
+                communityLinks: "커뮤니티 링크",
+                aboutUs: "우리에 대해",
+                copyright: "&copy; 2024 SOMPS•SOMPI",
+                version: "버전: 1.0",
+                ctaButtons: {
+                    buyNow: "지금 구매",
+                    joinCommunity: "커뮤니티에 가입"
+                }
+            },
+            hi: {
+                title: "SOMPS KRC20 #1",
+                subtitle: "1KAS=100,000,000 SOMPS | 1SOMPS=1USDT",
+                exchanges: "एक्सचेंज",
+                totalSupply: "कुल आपूर्ति",
+                airdrop: "एयरड्रॉप",
+                circulatingSupply: "परिवर्तनशील आपूर्ति",
+                tokenomics: "टोकनॉमिक्स",
+                fairDistribution: "100% निष्पक्ष और मुफ्त वितरण, कोई पूर्व-खनन नहीं, कोई टीम आवंटन नहीं",
+                decentralizedToken: "एक सच्चा विकेंद्रीकृत सामुदायिक टोकन",
+                founderTitle: "KASPA Sompi के ंस्थापक",
+                founderDescription: "संस्थापक Yonatan Sompolinsky, हार्वर्ड विश्वविद्यालय में कंप्यूटर विज्ञान के पोस्टडॉक्टोरल शोधकर्ता हैं।",
+                communityLinks: "समुदाय लिंक",
+                aboutUs: "हमारे बारे में",
+                copyright: "&copy; 2024 SOMPS•SOMPI",
+                version: "संस्करण: 1.0",
+                ctaButtons: {
+                    buyNow: "अभी खरीदें",
+                    joinCommunity: "समुदाय में शामिल हों"
+                }
+            },
+            ar: {
+                title: "SOMPS KRC20 #1",
+                subtitle: "1KAS=100,000,000 SOMPS | 1SOMPS=1USDT",
+                exchanges: "البورصات",
+                totalSupply: "إجمالي العرض",
+                airdrop: "إيردروب",
+                circulatingSupply: "العرض المتداول",
+                tokenomics: "اقتصاديات التوكن",
+                fairDistribution: "توزيع عادل ومجاني بنسبة 100%، لا تعدين مسبق، لا تخصيص لفريق",
+                decentralizedToken: "توكن مجتمعي لامركزي حقًا",
+                founderTitle: "مؤسس KASPA Sompi",
+                founderDescription: "المؤسس، يوناتان سومبولينسكي، زميل باحث ما بعد الدكتوراه في علوم الكمبيوتر في جامعة هارفارد.",
+                communityLinks: "روابط المجتمع",
+                aboutUs: "معلومات عنا",
+                copyright: "&copy; 2024 SOMPS•SOMPI",
+                version: "الإصدار: 1.0",
+                ctaButtons: {
+                    buyNow: "اشتر الآن",
+                    joinCommunity: "انضم إلى المجتمع"
+                }
+            },
+            zh: {
+                title: "SOMPS KRC20 #1",
+                subtitle: "1KAS=100,000,000 SOMPS | 1SOMPS=1USDT",
+                exchanges: "交易所",
+                totalSupply: "总供应量",
+                airdrop: "空投",
+                circulatingSupply: "流通供应量",
+                tokenomics: "代币经济",
+                fairDistribution: "100% 公平和免费的分配，没有预挖，没有团队分配",
+                decentralizedToken: "一个真正去中心化的社区代币",
+                founderTitle: "KASPA Sompi的创始人",
+                founderDescription: "创始人Yonatan Sompolinsky是哈佛大学计算机科学的博士后研究员。",
+                communityLinks: "社区链接",
+                aboutUs: "关于我们",
+                copyright: "&copy; 2024 SOMPS•SOMPI",
+                version: "版本: 1.0",
+                ctaButtons: {
+                    buyNow: "立即购买",
+                    joinCommunity: "加入社区"
+                }
+            },
+            fr: {
+                title: "SOMPS KRC20 #1",
+                subtitle: "1KAS=100,000,000 SOMPS | 1SOMPS=1USDT",
+                exchanges: "Échanges",
+                totalSupply: "Offre Totale",
+                airdrop: "Airdrop",
+                circulatingSupply: "Offre Circulante",
+                tokenomics: "Tokenomics",
+                fairDistribution: "Distribution 100% équitable et gratuite, pas de pré-minage, pas d'allocation d'équipe",
+                decentralizedToken: "Un véritable token communautaire décentralisé",
+                founderTitle: "Fondateur de KASPA Sompi",
+                founderDescription: "Le fondateur, Yonatan Sompolinsky, est chercheur postdoctoral en informatique à l'Université de Harvard.",
+                communityLinks: "Liens Communautaires",
+                aboutUs: "À Propos de Nous",
+                copyright: "&copy; 2024 SOMPS•SOMPI",
+                version: "Version: 1.0",
+                ctaButtons: {
+                    buyNow: "Acheter Maintenant",
+                    joinCommunity: "Rejoindre la Communauté"
+                }
+            },
+            de: {
+                title: "SOMPS KRC20 #1",
+                subtitle: "1KAS=100,000,000 SOMPS | 1SOMPS=1USDT",
+                exchanges: "Börsen",
+                totalSupply: "Gesamtangebot",
+                airdrop: "Airdrop",
+                circulatingSupply: "Umlaufangebot",
+                tokenomics: "Tokenomics",
+                fairDistribution: "100% faire und kostenlose Verteilung, kein Pre-Mining, keine Teamzuweisung",
+                decentralizedToken: "Ein wirklich dezentraler Community-Token",
+                founderTitle: "Gründer von KASPA Sompi",
+                founderDescription: "Der Gründer, Yonatan Sompolinsky, ist Postdoc-Forscher in Informatik an der Harvard University.",
+                communityLinks: "Gemeinschaftslinks",
+                aboutUs: "Über Uns",
+                copyright: "&copy; 2024 SOMPS•SOMPI",
+                version: "Version: 1.0",
+                ctaButtons: {
+                    buyNow: "Jetzt Kaufen",
+                    joinCommunity: "Gemeinschaft Beitreten"
+                }
+            }
+        };
+
+        function changeLanguage() {
+            const selectedLanguage = document.getElementById('language-selector').value;
+
+            // 更新页面标题
+            document.title = translations[selectedLanguage].title;
+
+            // 更新标题和副标题
+            document.querySelector('.title-text h1').innerText = translations[selectedLanguage].title;
+            document.querySelector('.title-text h2').innerText = translations[selectedLanguage].subtitle;
+
+            // 更新创始人部分
+            document.querySelector('.founder-info h3').innerText = translations[selectedLanguage].founderTitle;
+            document.querySelector('.founder-info p').innerText = translations[selectedLanguage].founderDescription;
+
+            // 更新 CTA 按钮文本
+            document.querySelector('.cta-button.primary').innerText = translations[selectedLanguage].ctaButtons.buyNow;
+            document.querySelector('.cta-button.secondary').innerText = translations[selectedLanguage].ctaButtons.joinCommunity;
+
+            // 更新交易所部分
+            document.querySelector('.exchange-section h2').innerText = translations[selectedLanguage].exchanges;
+
+            // 更新 Tokenomics 部分
+            document.querySelector('.tokenomics-section h2').innerText = translations[selectedLanguage].tokenomics;
+            document.querySelector('.tokenomics-item:nth-child(1) h3').innerText = translations[selectedLanguage].totalSupply;
+            document.querySelector('.tokenomics-item:nth-child(2) h3').innerText = translations[selectedLanguage].airdrop;
+            document.querySelector('.tokenomics-item:nth-child(3) h3').innerText = translations[selectedLanguage].circulatingSupply;
+            document.querySelector('.tokenomics-description p:nth-child(1)').innerText = translations[selectedLanguage].fairDistribution;
+            document.querySelector('.tokenomics-description p:nth-child(2)').innerText = translations[selectedLanguage].decentralizedToken;
+
+            // 更新页脚部分
+            document.querySelector('.footer-section h3:nth-child(1)').innerText = translations[selectedLanguage].communityLinks;
+            document.querySelector('.footer-section h3:nth-child(2)').innerText = translations[selectedLanguage].aboutUs;
+            document.querySelector('.copyright').innerHTML = translations[selectedLanguage].copyright;
+            document.querySelector('.version').innerText = translations[selectedLanguage].version;
+        }
+
+        // 在页面加载时调用 changeLanguage 函数
+        window.onload = function() {
+            changeLanguage(); // 设置为默认语言
+        };
+    </script>
+</body>
+
+</html>

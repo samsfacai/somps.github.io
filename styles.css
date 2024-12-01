@@ -1,0 +1,718 @@
+/* 基本样式 */
+
+:root {
+    --primary-color: #f7931a;
+    --secondary-color: #2c3e50;
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+    --background-dark: #111;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-dark);
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+
+/* 导航栏样式 */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #333, #555);
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+nav ul.nav-links {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #444;
+}
+
+
+/* 标题样式 */
+
+.header-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 60px;
+}
+
+.header-title .logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.title-text {
+    text-align: left;
+}
+
+.title-text h1 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.title-text h2 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin: 0.3rem 0 0 0;
+    font-weight: normal;
+}
+
+
+/* Hero部分 */
+
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('background.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 2rem;
+    margin-top: 0;
+}
+
+.hero-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    padding: 0 4rem;
+    margin: 0 auto;
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+    padding-left: 20rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 2rem;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: flex-start;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    display: block;
+    font-size: 1rem;
+    color: #ddd;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.cta-button.primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* 交易平台部分 */
+
+.exchange-section {
+    padding: 4rem 2rem;
+    background-color: var(--background-dark);
+}
+
+.exchange-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+}
+
+.exchange-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.exchange-logo-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.exchange-logo-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.exchange-logo-item img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.exchange-logo-item h3 {
+    color: var(--text-color);
+    margin: 1rem 0;
+}
+
+.exchange-logo-item p {
+    color: #888;
+}
+
+
+/* 代币经济学部分 */
+
+.tokenomics-section {
+    padding: 4rem 2rem;
+    background-color: #1a1a1a;
+}
+
+.tokenomics-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tokenomics-content h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+}
+
+.tokenomics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.tokenomics-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.tokenomics-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tokenomics-item h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.tokenomics-item p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.tokenomics-description {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.tokenomics-description p {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin: 1rem 0;
+}
+
+
+/* DOG之父部分 */
+
+.founder-section {
+    padding: 4rem 2rem;
+    background-color: var(--background-dark);
+}
+
+.founder-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.founder-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.founder-info h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.founder-info p {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-bottom: 2rem;
+}
+
+.founder-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.founder-stats .stat {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.founder-stats .number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.founder-stats .label {
+    color: #ddd;
+    font-size: 1rem;
+}
+
+
+/* 页脚部分 */
+
+
+/* 页脚样式美化 */
+
+footer {
+    background: linear-gradient(135deg, #2c3e50, #1a1a1a);
+    padding: 50px 20px;
+    color: #ddd;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    color: #f7931a;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    position: relative;
+}
+
+.footer-section h3::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #f7931a;
+    margin-top: 10px;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    color: #aaa;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-link:hover {
+    color: #f7931a;
+    transform: translateX(5px);
+}
+
+.social-link img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.version {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+
+/* 响应式布局 */
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .social-links {
+        align-items: center;
+    }
+}
+
+
+/* 动画 */
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+/* 响应式设计 */
+
+@media (max-width: 768px) {
+    .header-title {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+    .title-text {
+        text-align: center;
+    }
+    .hero-container {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 2rem;
+    }
+    .hero-content,
+    .hero-image {
+        max-width: 100%;
+        text-align: center;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    .hero-stats {
+        justify-content: center;
+    }
+    .hero-image img {
+        max-width: 80%;
+    }
+    .tokenomics-grid {
+        grid-template-columns: 1fr;
+    }
+    .founder-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .social-links {
+        align-items: center;
+    }
+    nav ul.nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    .cta-buttons {
+        justify-content: center;
+    }
+    .hero-content {
+        padding-left: 0;
+    }
+    .hero-image {
+        padding-right: 0;
+    }
+}
+
+
+/* 弹窗样式 */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #222222;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    color: #333;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    color: #f7931a;
+    /* 橙色标题 */
+}
+
+.modal-content p,
+.modal-content ol {
+    color: #eee;
+    /* 更亮的灰色 */
+}
+
+.media-section {
+    text-align: center;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    /* 渐变背景 */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    /* 阴影效果 */
+}
+
+.video-container {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    /* 圆角视频容器 */
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.social-logo {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+    /* 缩放过渡效果 */
+}
+
+.social-logo:hover {
+    transform: scale(1.1);
+    /* 悬停时放大 */
+}
+
+.youtube-link {
+    font-size: 18px;
+    color: #FF0000;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid #FF0000;
+    border-radius: 5px;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* 背景和文字颜色过渡 */
+}
+
+.youtube-link:hover {
+    background-color: #FF0000;
+    color: #ffffff;
+}
+
+
+/* 社交链接行样式 */
+
+
+/* 社交链接行样式 */
+
+
+/* 社交链接行样式 */
+
+.social-links-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ddd;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #f7931a;
+    transform: scale(1.1);
+}
+
+.social-link img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
